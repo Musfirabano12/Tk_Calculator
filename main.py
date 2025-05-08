@@ -24,16 +24,13 @@ def calculate(operation):
     except ZeroDivisionError:
         messagebox.showerror("Math Error", "Cannot divide by zero.")
 
-# Main window
 root = tk.Tk()
 root.title("TK Calculator")  # Window title
 root.geometry("400x370")
 root.configure(bg="#f0f8ff")
 
-# App name label
 tk.Label(root, text="TK Calculator", font=('Arial', 16, 'bold'), bg="#f0f8ff", fg="#333").pack(pady=10)
 
-# Input
 tk.Label(root, text="First Number:", font=('Arial', 13), bg="#f0f8ff").pack()
 entry1 = tk.Entry(root, font=('Arial', 13), width=25, justify='center')
 entry1.pack()
@@ -42,7 +39,6 @@ tk.Label(root, text="Second Number:", font=('Arial', 13), bg="#f0f8ff").pack(pad
 entry2 = tk.Entry(root, font=('Arial', 13), width=25, justify='center')
 entry2.pack()
 
-# Buttons
 button_frame = tk.Frame(root, bg="#f0f8ff")
 button_frame.pack(pady=20)
 
@@ -59,7 +55,6 @@ tk.Button(button_frame, text='Subtract', bg='#ffcccb', command=lambda: calculate
 tk.Button(button_frame, text='Multiply', bg='#add8e6', command=lambda: calculate('Multiply'), **btn_style).grid(row=1, column=0, padx=10, pady=5)
 tk.Button(button_frame, text='Divide', bg='#f4a460', command=lambda: calculate('Divide'), **btn_style).grid(row=1, column=1, padx=10, pady=5)
 
-# Result display
 result_var = tk.StringVar()
 result_var.set("Result: ")
 tk.Label(root, textvariable=result_var, font=('Arial', 15, 'bold'), bg="#f0f8ff", fg="#333").pack(pady=15)
